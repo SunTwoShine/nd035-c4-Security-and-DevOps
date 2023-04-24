@@ -38,7 +38,7 @@ public class OrderController {
 		}
 		UserOrder order = UserOrder.createFromCart(user.getCart());
 		orderRepository.save(order);
-		log.info("The order for user {} was submitted.", username);
+		log.info("The order for user {} was submitted. The total price of the order is {}.", username, order.getTotal());
 		return ResponseEntity.ok(order);
 	}
 	
@@ -49,7 +49,8 @@ public class OrderController {
 			log.error("User with username {} cannot be found.", username);
 			return ResponseEntity.notFound().build();
 		}
-		log.info("The orders from user {} are shown.", username);
-		return ResponseEntity.ok(orderRepository.findByUser(user));
+		List<UserOrder> allOrders = orderRepository.findByUser(user);
+		log.info("The orders from user {} are shown. The person has {} orders.", username, allOrders.size());
+		return ResponseEntity.ok(allOrders);
 	}
 }
