@@ -1,0 +1,9 @@
+2023-04-24 13:44:37,841 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on DESKTOP-5EN43Q6 with PID 19116 (started by Maike Wehmeyer in C:\Users\Maike Wehmeyer\Documents\Java Web Development Course\Part 4\Github_privat\nd035-c4-Security-and-DevOps\starter_code)
+2023-04-24 13:44:37,857 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2023-04-24 13:44:37,857 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2023-04-24 13:44:40,614 DEBUG c.e.d.s.JWTAuthenticationVerficationFilter [main] Filter 'JWTAuthenticationVerficationFilter' configured for use
+2023-04-24 13:44:41,338 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 3.758 seconds (JVM running for 4.506)
+2023-04-24 13:44:41,343 INFO c.e.d.SareetaApplication [main] Ecommerce Application Started
+2023-04-24 13:45:10,852 DEBUG c.e.d.c.UserController [http-nio-8081-exec-4] Username set to mw.
+2023-04-24 13:45:10,967 INFO c.e.d.c.UserController [http-nio-8081-exec-4] User with name mw was saved.
+2023-04-24 13:45:16,569 INFO c.e.d.c.OrderController [http-nio-8081-exec-8] The order for user mw was submitted.
