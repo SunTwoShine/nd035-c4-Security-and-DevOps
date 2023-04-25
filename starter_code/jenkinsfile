@@ -16,7 +16,10 @@ pipeline {
         }
         stage('Build') {
             steps {
-               bat 'mvn -Dmaven.test.failure.ignore=true install'
+                bat '''
+                    cd starter_code/
+                    mvn -Dmaven.test.failure.ignore=true install
+                    '''
             }
             post {
                 success {
