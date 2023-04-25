@@ -1,0 +1,296 @@
+Gestartet durch Benutzer Maike Wehmeyer
+Obtained starter_code/jenkinsfile from git https://github.com/SunTwoShine/nd035-c4-Security-and-DevOps.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential 64a634a8-3e3e-422f-b17e-9503946826c1
+ > git.exe rev-parse --resolve-git-dir C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/SunTwoShine/nd035-c4-Security-and-DevOps.git # timeout=10
+Fetching upstream changes from https://github.com/SunTwoShine/nd035-c4-Security-and-DevOps.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.39.2.windows.1'
+using GIT_ASKPASS to set credentials 
+ > git.exe fetch --tags --force --progress -- https://github.com/SunTwoShine/nd035-c4-Security-and-DevOps.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision 1aac4a37797c2f0fd775c5cb3a2f16f42ba53db1 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 1aac4a37797c2f0fd775c5cb3a2f16f42ba53db1 # timeout=10
+Commit message: "updated jenkinsfile"
+ > git.exe rev-list --no-walk d88a290bfe39ab0d136a3f52d5127a6d62d790ca # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Initialize)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] bat
+
+C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce>echo "PATH = ${PATH}" 
+"PATH = ${PATH}"
+
+C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce>echo "M2_HOME = ${M2_HOME}" 
+"M2_HOME = ${M2_HOME}"
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] bat
+
+C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce>cd starter_code/ 
+
+C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code>mvn -Dmaven.test.failure.ignore=true install 
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.example:auth-course >-----------------------
+[INFO] Building auth-course 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ auth-course ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ auth-course ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ auth-course ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ auth-course ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ auth-course ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.demo.controllers.CartControllerTest
+2023-04-25 11:36:03,222 main DEBUG Apache Log4j Core 2.11.2 initializing configuration XmlConfiguration[location=C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml]
+2023-04-25 11:36:03,225 main DEBUG Installed 1 script engine
+2023-04-25 11:36:03,410 main DEBUG Oracle Nashorn version: 1.8.0_362, language: ECMAScript, threading: Not Thread Safe, compile: true, names: [nashorn, Nashorn, js, JS, JavaScript, javascript, ECMAScript, ecmascript], factory class: jdk.nashorn.api.scripting.NashornScriptEngineFactory
+2023-04-25 11:36:03,410 main DEBUG PluginManager 'Core' found 117 plugins
+2023-04-25 11:36:03,410 main DEBUG PluginManager 'Level' found 0 plugins
+2023-04-25 11:36:03,413 main DEBUG PluginManager 'Lookup' found 13 plugins
+2023-04-25 11:36:03,414 main DEBUG Building Plugin[name=layout, class=org.apache.logging.log4j.core.layout.PatternLayout].
+2023-04-25 11:36:03,422 main DEBUG PluginManager 'TypeConverter' found 26 plugins
+2023-04-25 11:36:03,428 main DEBUG PatternLayout$Builder(pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n", PatternSelector=null, Configuration(C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml), Replace=null, charset="null", alwaysWriteExceptions="null", disableAnsi="null", noConsoleNoAnsi="null", header="null", footer="null")
+2023-04-25 11:36:03,428 main DEBUG PluginManager 'Converter' found 47 plugins
+2023-04-25 11:36:03,429 main DEBUG Building Plugin[name=appender, class=org.apache.logging.log4j.core.appender.ConsoleAppender].
+2023-04-25 11:36:03,447 main DEBUG ConsoleAppender$Builder(target="SYSTEM_OUT", follow="null", direct="null", bufferedIo="null", bufferSize="null", immediateFlush="null", ignoreExceptions="null", PatternLayout(%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n), name="LogToConsole", Configuration(C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml), Filter=null, ={})
+2023-04-25 11:36:03,448 main DEBUG Starting OutputStreamManager SYSTEM_OUT.false.false
+2023-04-25 11:36:03,448 main DEBUG Building Plugin[name=layout, class=org.apache.logging.log4j.core.layout.PatternLayout].
+2023-04-25 11:36:03,448 main DEBUG PatternLayout$Builder(pattern="%d %p %c{1.} [%t] %m%n", PatternSelector=null, Configuration(C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml), Replace=null, charset="null", alwaysWriteExceptions="null", disableAnsi="null", noConsoleNoAnsi="null", header="null", footer="null")
+2023-04-25 11:36:03,458 main DEBUG Building Plugin[name=appender, class=org.apache.logging.log4j.core.appender.FileAppender].
+2023-04-25 11:36:03,460 main DEBUG FileAppender$Builder(fileName="logs/app_ecommerce.log", append="null", locking="null", advertise="null", advertiseUri="null", createOnDemand="null", filePermissions="null", fileOwner="null", fileGroup="null", bufferedIo="null", bufferSize="null", immediateFlush="null", ignoreExceptions="null", PatternLayout(%d %p %c{1.} [%t] %m%n), name="LogToFile", Configuration(C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml), Filter=null, ={})
+2023-04-25 11:36:03,461 main DEBUG Starting FileManager logs/app_ecommerce.log
+2023-04-25 11:36:03,462 main DEBUG Building Plugin[name=appenders, class=org.apache.logging.log4j.core.config.AppendersPlugin].
+2023-04-25 11:36:03,463 main DEBUG createAppenders(={LogToConsole, LogToFile})
+2023-04-25 11:36:03,463 main DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2023-04-25 11:36:03,465 main DEBUG createAppenderRef(ref="LogToFile", level="null", Filter=null)
+2023-04-25 11:36:03,465 main DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2023-04-25 11:36:03,465 main DEBUG createAppenderRef(ref="LogToConsole", level="null", Filter=null)
+2023-04-25 11:36:03,466 main DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2023-04-25 11:36:03,471 main DEBUG createLogger(additivity="false", level="DEBUG", name="com.example.demo", includeLocation="null", ={LogToFile, LogToConsole}, ={}, Configuration(C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml), Filter=null)
+2023-04-25 11:36:03,472 main DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2023-04-25 11:36:03,473 main DEBUG createAppenderRef(ref="LogToConsole", level="null", Filter=null)
+2023-04-25 11:36:03,473 main DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2023-04-25 11:36:03,474 main DEBUG createLogger(additivity="false", level="ERROR", name="org.springframework.boot", includeLocation="null", ={LogToConsole}, ={}, Configuration(C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml), Filter=null)
+2023-04-25 11:36:03,474 main DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2023-04-25 11:36:03,475 main DEBUG createAppenderRef(ref="LogToFile", level="null", Filter=null)
+2023-04-25 11:36:03,475 main DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2023-04-25 11:36:03,476 main DEBUG createAppenderRef(ref="LogToConsole", level="null", Filter=null)
+2023-04-25 11:36:03,476 main DEBUG Building Plugin[name=root, class=org.apache.logging.log4j.core.config.LoggerConfig$RootLogger].
+2023-04-25 11:36:03,476 main DEBUG createLogger(additivity="null", level="ERROR", includeLocation="null", ={LogToFile, LogToConsole}, ={}, Configuration(C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml), Filter=null)
+2023-04-25 11:36:03,477 main DEBUG Building Plugin[name=loggers, class=org.apache.logging.log4j.core.config.LoggersPlugin].
+2023-04-25 11:36:03,478 main DEBUG createLoggers(={com.example.demo, org.springframework.boot, root})
+2023-04-25 11:36:03,478 main DEBUG Configuration XmlConfiguration[location=C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml] initialized
+2023-04-25 11:36:03,479 main DEBUG Starting configuration XmlConfiguration[location=C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml]
+2023-04-25 11:36:03,479 main DEBUG Started configuration XmlConfiguration[location=C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml] OK.
+2023-04-25 11:36:03,479 main DEBUG Shutting down OutputStreamManager SYSTEM_OUT.false.false-1
+2023-04-25 11:36:03,480 main DEBUG Shut down OutputStreamManager SYSTEM_OUT.false.false-1, all resources released: true
+2023-04-25 11:36:03,480 main DEBUG Appender DefaultConsole-1 stopped with status true
+2023-04-25 11:36:03,480 main DEBUG Stopped org.apache.logging.log4j.core.config.DefaultConfiguration@2a7ed1f OK
+2023-04-25 11:36:03,532 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92
+2023-04-25 11:36:03,536 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92,component=StatusLogger
+2023-04-25 11:36:03,537 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92,component=ContextSelector
+2023-04-25 11:36:03,538 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92,component=Loggers,name=org.springframework.boot
+2023-04-25 11:36:03,538 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92,component=Loggers,name=
+2023-04-25 11:36:03,538 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92,component=Loggers,name=com.example.demo
+2023-04-25 11:36:03,539 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92,component=Appenders,name=LogToConsole
+2023-04-25 11:36:03,539 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92,component=Appenders,name=LogToFile
+2023-04-25 11:36:03,541 main DEBUG org.apache.logging.log4j.core.util.SystemClock does not support precise timestamps.
+2023-04-25 11:36:03,542 main DEBUG Reconfiguration complete for context[name=75b84c92] at URI C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml (org.apache.logging.log4j.core.LoggerContext@1c98290c) with optional ClassLoader: null
+2023-04-25 11:36:03,542 main DEBUG Shutdown hook enabled. Registering a new one.
+2023-04-25 11:36:03,543 main DEBUG LoggerContext[name=75b84c92, org.apache.logging.log4j.core.LoggerContext@1c98290c] started OK.
+11:36:03.567 [main] ERROR com.example.demo.controllers.CartController - User with username test_failure could not be found.
+2023-04-25 11:36:03,572 main DEBUG AsyncLogger.ThreadNameStrategy=UNCACHED (user specified null, default is UNCACHED)
+2023-04-25 11:36:03,572 main DEBUG org.apache.logging.log4j.core.util.SystemClock does not support precise timestamps.
+11:36:03.595 [main] INFO  com.example.demo.controllers.CartController - Cart was saved for user test.
+11:36:03.596 [main] ERROR com.example.demo.controllers.CartController - Item with id 2 could not be found.
+11:36:03.597 [main] INFO  com.example.demo.controllers.CartController - Cart was saved for user test.
+11:36:03.597 [main] INFO  com.example.demo.controllers.CartController - Cart was saved for user test.
+11:36:03.597 [main] INFO  com.example.demo.controllers.CartController - Item with id 2 was removed from cart for user test.
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.016 s - in com.example.demo.controllers.CartControllerTest
+[INFO] Running com.example.demo.controllers.ItemControllerTest
+11:36:03.608 [main] INFO  com.example.demo.controllers.ItemController - Specific item with id 1 is shown.
+11:36:03.611 [main] INFO  com.example.demo.controllers.ItemController - Items with name Flower are shown.
+11:36:03.611 [main] DEBUG com.example.demo.controllers.ItemController - There are 1 items with the name Flower
+11:36:03.611 [main] INFO  com.example.demo.controllers.ItemController - all items are shown.
+11:36:03.613 [main] INFO  com.example.demo.controllers.ItemController - Items with name Flower are shown.
+11:36:03.613 [main] DEBUG com.example.demo.controllers.ItemController - There are 0 items with the name Flower
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.example.demo.controllers.ItemControllerTest
+[INFO] Running com.example.demo.controllers.OrderControllerTest
+11:36:03.662 [main] INFO  com.example.demo.controllers.OrderController - The order for user test was submitted. The total price of the order is 1.979999999999999982236431605997495353221893310546875.
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in com.example.demo.controllers.OrderControllerTest
+[INFO] Running com.example.demo.controllers.UserControllerTest
+11:36:03.695 [main] DEBUG com.example.demo.controllers.UserController - Username set to test.
+11:36:03.697 [main] INFO  com.example.demo.controllers.UserController - User with name test was saved.
+11:36:03.697 [main] DEBUG com.example.demo.controllers.UserController - Username set to test.
+11:36:03.697 [main] INFO  com.example.demo.controllers.UserController - User with name test was saved.
+11:36:03.698 [main] DEBUG com.example.demo.controllers.UserController - Username set to test.
+11:36:03.698 [main] INFO  com.example.demo.controllers.UserController - User with name test was saved.
+11:36:03.698 [main] DEBUG com.example.demo.controllers.UserController - Username set to test.
+11:36:03.698 [main] ERROR com.example.demo.controllers.UserController - Error with creating the password for user test. It is either too short or doesn't match.
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in com.example.demo.controllers.UserControllerTest
+[INFO] Running com.example.demo.SareetaApplicationTests
+2023-04-25 11:36:04,014 main DEBUG Reconfiguration started for context[name=75b84c92] at URI null (org.apache.logging.log4j.core.LoggerContext@1c98290c) with optional ClassLoader: null
+2023-04-25 11:36:04,014 main DEBUG Using configurationFactory org.apache.logging.log4j.core.config.ConfigurationFactory$Factory@652ab8d9
+2023-04-25 11:36:04,024 main INFO Log4j appears to be running in a Servlet environment, but there's no log4j-web module available. If you want better web container support, please add the log4j-web JAR to your web archive or server lib directory.
+2023-04-25 11:36:04,024 main DEBUG Closing BufferedInputStream java.io.BufferedInputStream@14fc5d40
+2023-04-25 11:36:04,027 main DEBUG Apache Log4j Core 2.11.2 initializing configuration XmlConfiguration[location=C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml]
+2023-04-25 11:36:04,028 main DEBUG Installed 1 script engine
+2023-04-25 11:36:04,032 main DEBUG Oracle Nashorn version: 1.8.0_362, language: ECMAScript, threading: Not Thread Safe, compile: true, names: [nashorn, Nashorn, js, JS, JavaScript, javascript, ECMAScript, ecmascript], factory class: jdk.nashorn.api.scripting.NashornScriptEngineFactory
+2023-04-25 11:36:04,033 main DEBUG PluginManager 'Core' found 117 plugins
+2023-04-25 11:36:04,033 main DEBUG PluginManager 'Level' found 0 plugins
+2023-04-25 11:36:04,034 main DEBUG PluginManager 'Lookup' found 13 plugins
+2023-04-25 11:36:04,035 main DEBUG Building Plugin[name=layout, class=org.apache.logging.log4j.core.layout.PatternLayout].
+2023-04-25 11:36:04,036 main DEBUG PatternLayout$Builder(pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n", PatternSelector=null, Configuration(C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml), Replace=null, charset="null", alwaysWriteExceptions="null", disableAnsi="null", noConsoleNoAnsi="null", header="null", footer="null")
+2023-04-25 11:36:04,036 main DEBUG PluginManager 'Converter' found 47 plugins
+2023-04-25 11:36:04,037 main DEBUG Building Plugin[name=appender, class=org.apache.logging.log4j.core.appender.ConsoleAppender].
+2023-04-25 11:36:04,037 main DEBUG ConsoleAppender$Builder(target="SYSTEM_OUT", follow="null", direct="null", bufferedIo="null", bufferSize="null", immediateFlush="null", ignoreExceptions="null", PatternLayout(%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n), name="LogToConsole", Configuration(C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml), Filter=null, ={})
+2023-04-25 11:36:04,038 main DEBUG Building Plugin[name=layout, class=org.apache.logging.log4j.core.layout.PatternLayout].
+2023-04-25 11:36:04,039 main DEBUG PatternLayout$Builder(pattern="%d %p %c{1.} [%t] %m%n", PatternSelector=null, Configuration(C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml), Replace=null, charset="null", alwaysWriteExceptions="null", disableAnsi="null", noConsoleNoAnsi="null", header="null", footer="null")
+2023-04-25 11:36:04,039 main DEBUG Building Plugin[name=appender, class=org.apache.logging.log4j.core.appender.FileAppender].
+2023-04-25 11:36:04,040 main DEBUG FileAppender$Builder(fileName="logs/app_ecommerce.log", append="null", locking="null", advertise="null", advertiseUri="null", createOnDemand="null", filePermissions="null", fileOwner="null", fileGroup="null", bufferedIo="null", bufferSize="null", immediateFlush="null", ignoreExceptions="null", PatternLayout(%d %p %c{1.} [%t] %m%n), name="LogToFile", Configuration(C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml), Filter=null, ={})
+2023-04-25 11:36:04,040 main DEBUG Building Plugin[name=appenders, class=org.apache.logging.log4j.core.config.AppendersPlugin].
+2023-04-25 11:36:04,040 main DEBUG createAppenders(={LogToConsole, LogToFile})
+2023-04-25 11:36:04,040 main DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2023-04-25 11:36:04,041 main DEBUG createAppenderRef(ref="LogToFile", level="null", Filter=null)
+2023-04-25 11:36:04,041 main DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2023-04-25 11:36:04,041 main DEBUG createAppenderRef(ref="LogToConsole", level="null", Filter=null)
+2023-04-25 11:36:04,041 main DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2023-04-25 11:36:04,042 main DEBUG createLogger(additivity="false", level="DEBUG", name="com.example.demo", includeLocation="null", ={LogToFile, LogToConsole}, ={}, Configuration(C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml), Filter=null)
+2023-04-25 11:36:04,042 main DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2023-04-25 11:36:04,042 main DEBUG createAppenderRef(ref="LogToConsole", level="null", Filter=null)
+2023-04-25 11:36:04,043 main DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2023-04-25 11:36:04,043 main DEBUG createLogger(additivity="false", level="ERROR", name="org.springframework.boot", includeLocation="null", ={LogToConsole}, ={}, Configuration(C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml), Filter=null)
+2023-04-25 11:36:04,043 main DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2023-04-25 11:36:04,043 main DEBUG createAppenderRef(ref="LogToFile", level="null", Filter=null)
+2023-04-25 11:36:04,044 main DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2023-04-25 11:36:04,044 main DEBUG createAppenderRef(ref="LogToConsole", level="null", Filter=null)
+2023-04-25 11:36:04,044 main DEBUG Building Plugin[name=root, class=org.apache.logging.log4j.core.config.LoggerConfig$RootLogger].
+2023-04-25 11:36:04,044 main DEBUG createLogger(additivity="null", level="ERROR", includeLocation="null", ={LogToFile, LogToConsole}, ={}, Configuration(C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml), Filter=null)
+2023-04-25 11:36:04,045 main DEBUG Building Plugin[name=loggers, class=org.apache.logging.log4j.core.config.LoggersPlugin].
+2023-04-25 11:36:04,045 main DEBUG createLoggers(={com.example.demo, org.springframework.boot, root})
+2023-04-25 11:36:04,045 main DEBUG Configuration XmlConfiguration[location=C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml] initialized
+2023-04-25 11:36:04,046 main DEBUG Starting configuration XmlConfiguration[location=C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml]
+2023-04-25 11:36:04,046 main DEBUG Started configuration XmlConfiguration[location=C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml] OK.
+2023-04-25 11:36:04,046 main DEBUG Appender LogToFile stopped with status true
+2023-04-25 11:36:04,047 main DEBUG Appender LogToConsole stopped with status true
+2023-04-25 11:36:04,047 main DEBUG Stopped XmlConfiguration[location=C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml] OK
+2023-04-25 11:36:04,048 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92
+2023-04-25 11:36:04,048 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92,component=StatusLogger
+2023-04-25 11:36:04,049 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92,component=ContextSelector
+2023-04-25 11:36:04,049 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92,component=Loggers,name=org.springframework.boot
+2023-04-25 11:36:04,049 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92,component=Loggers,name=
+2023-04-25 11:36:04,050 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92,component=Loggers,name=com.example.demo
+2023-04-25 11:36:04,050 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92,component=Appenders,name=LogToConsole
+2023-04-25 11:36:04,051 main DEBUG Registering MBean org.apache.logging.log4j2:type=75b84c92,component=Appenders,name=LogToFile
+2023-04-25 11:36:04,051 main DEBUG Reconfiguration complete for context[name=75b84c92] at URI C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\classes\log4j2.xml (org.apache.logging.log4j.core.LoggerContext@1c98290c) with optional ClassLoader: null
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.5.RELEASE)
+
+11:36:04.129 [main] INFO  com.example.demo.SareetaApplicationTests - Starting SareetaApplicationTests on DESKTOP-5EN43Q6 with PID 10468 (started by Maike Wehmeyer in C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code)
+11:36:04.130 [main] DEBUG com.example.demo.SareetaApplicationTests - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+11:36:04.131 [main] INFO  com.example.demo.SareetaApplicationTests - No active profile set, falling back to default profiles: default
+11:36:09.053 [main] INFO  com.example.demo.SareetaApplicationTests - Started SareetaApplicationTests in 5.118 seconds (JVM running for 6.711)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.375 s - in com.example.demo.SareetaApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- maven-war-plugin:3.2.2:war (default-war) @ auth-course ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [auth-course] in [C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\auth-course-0.0.1-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Webapp assembled in [306 msecs]
+[INFO] Building war: C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\auth-course-0.0.1-SNAPSHOT.war
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.1.5.RELEASE:repackage (repackage) @ auth-course ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ auth-course ---
+[INFO] Installing C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\target\auth-course-0.0.1-SNAPSHOT.war to C:\Users\Maike Wehmeyer\.m2\repository\com\example\auth-course\0.0.1-SNAPSHOT\auth-course-0.0.1-SNAPSHOT.war
+[INFO] Installing C:\Users\Maike Wehmeyer\AppData\Local\Jenkins\.jenkins\workspace\Udacity_ECommerce\starter_code\pom.xml to C:\Users\Maike Wehmeyer\.m2\repository\com\example\auth-course\0.0.1-SNAPSHOT\auth-course-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.648 s
+[INFO] Finished at: 2023-04-25T11:36:12+02:00
+[INFO] ------------------------------------------------------------------------
+Post stage
+[Pipeline] junit
+Zeichne Testergebnisse auf.
+[Checks API] No suitable checks publisher found.
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
